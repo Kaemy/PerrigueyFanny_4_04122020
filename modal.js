@@ -31,6 +31,7 @@ function closeModal() {
 // Close modal event
 modalCross[0].addEventListener ("click", closeModal);
 
+
 // #2 TODO : Implement form entries
 
 // form must be valide when user click on "submit"
@@ -104,16 +105,16 @@ function validate () {
     lastChecked = true;
   };
 
-    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
+    if (!/[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(eMail.value)) { 
       errorMail.innerText = 'Veuillez renseigner une addresse mail valide';
       errorMail.style.color = 'red';
       errorMail.style.fontSize = '0.8rem';
       errorMail.style.marginTop = '10px';
       eMail.style.border = 'solid red 2px';
   } else {
-    errorMail.style.display = 'none';
-    eMail.style.border = 'none';
-    mailChecked = true;
+      errorMail.style.display = 'none';
+      eMail.style.border = 'none';
+      mailChecked = true;
   };
 
   if (!birthDate.value.match(/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/)) { 
